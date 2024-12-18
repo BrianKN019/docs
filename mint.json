@@ -54,8 +54,8 @@
       "pages": [
         "introduction",
         "quickstart",
-        "development"
-        "nas"
+        "development",
+        "nas",
         "vpclogs"
       ]
     },
