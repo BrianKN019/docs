@@ -1,0 +1,133 @@
+---
+title: 'Amazon VPC, Monitoring, and Flow Logs'
+description: 'A hands-on guide to setting up and monitoring Amazon VPC with Flow Logs'
+---
+
+<Info>
+  **Prerequisite**: Ensure you have an active AWS account and permissions to create and manage VPCs, EC2 instances, and Flow Logs.
+</Info>
+
+This guide will walk you through setting up an Amazon VPC, launching an EC2 instance, enabling Flow Logs, and monitoring network traffic using CloudWatch.
+
+---
+
+## Step 1: Create a VPC
+
+To create a Virtual Private Cloud (VPC), follow the steps below:
+
+<CodeGroup>
+  ```aws-cli
+  aws ec2 create-vpc --cidr-block 10.0.0.0/16
+  ```
+
+  ```console
+  # Using the AWS Management Console:
+  1. Open the **VPC** dashboard in the AWS Console.
+  2. Select **Your VPCs** from the left-hand navigation bar.
+  3. Click **Create VPC**.
+  4. Select **VPC and More** as the template.
+  5. Enter a name, e.g., **MyVPC**, and use the default CIDR block `10.0.0.0/16`.
+  6. Leave IPv6 CIDR block as "No IPv6 CIDR block".
+  7. Select 1 public subnet and 1 availability zone.
+  8. Disable NAT Gateways to minimize costs.
+  9. Click **Create VPC**.
+  ```
+</CodeGroup>
+
+<Info>
+  **Tip**: If you plan to use private subnets, consider adding NAT Gateways for internet access from private instances.
+</Info>
+
+---
+
+## Step 2: Launch an EC2 Instance
+
+Now that your VPC is ready, launch an EC2 instance within it:
+
+1. Navigate to the **EC2 console** and click **Launch Instances**.
+2. Configure the instance with these details:
+   - **Name**: `Instance - MyVPC Project`.
+   - **Amazon Machine Image (AMI)**: Select **Amazon Linux 2023 AMI**.
+   - **Instance Type**: `t2.micro` (eligible for free tier).
+   - **Network settings**: 
+     - Select the **MyVPC** VPC.
+     - Choose the public subnet created earlier.
+     - Enable public IP auto-assignment.
+   - **Security group**: Create a new group called `SG - MyVPC Project`:
+     - Add an inbound rule to allow SSH traffic (port 22) from your IP.
+
+<CodeGroup>
+  ```aws-cli
+  aws ec2 run-instances \
+    --image-id ami-0abcdef1234567890 \
+    --instance-type t2.micro \
+    --key-name MyKeyPair \
+    --security-group-ids sg-0abc12345def67890 \
+    --subnet-id subnet-0abc123456def7890
+  ```
+</CodeGroup>
+
+---
+
+## Step 3: Enable Flow Logs
+
+Flow Logs allow you to monitor network traffic for your VPC. Follow these steps to enable them:
+
+1. Go to the **VPC console**, select your VPC, and open the **Flow Logs** tab.
+2. Click **Create Flow Log** and configure:
+   - **Filter**: `All`.
+   - **Destination**: `CloudWatch Logs`.
+   - Create or select an IAM role that allows VPC to publish logs to CloudWatch.
+
+<CodeGroup>
+  ```aws-cli
+  aws ec2 create-flow-logs \
+    --resource-type VPC \
+    --resource-ids vpc-0abc123456def7890 \
+    --traffic-type ALL \
+    --log-group-name MyFlowLogs \
+    --deliver-logs-permission-arn arn:aws:iam::123456789012:role/MyFlowLogsRole
+  ```
+</CodeGroup>
+
+---
+
+## Viewing Logs in CloudWatch
+
+Once Flow Logs are enabled, you can monitor network traffic in CloudWatch:
+
+1. Open the **CloudWatch console** and select **Log Groups**.
+2. Find your log group (e.g., `MyFlowLogs`) and explore the entries.
+3. Analyze the data to identify unusual traffic patterns or troubleshoot connectivity.
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see any data in Flow Logs">
+    Ensure:
+    1. The IAM role has the correct permissions to publish logs to CloudWatch.
+    2. There is traffic in the VPC (test by using commands like `ping` or `curl` from your instance).
+  </Accordion>
+
+  <Accordion title="EC2 instance is not accessible via SSH">
+    Verify:
+    1. The instance is in a public subnet and has a public IP assigned.
+    2. The security group has an inbound rule to allow SSH traffic from your IP.
+    3. Your local machine allows outgoing SSH traffic.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Conclusion
+
+You’ve successfully:
+1. Created a VPC.
+2. Launched an EC2 instance within the VPC.
+3. Enabled Flow Logs to monitor network traffic.
+
+<Tip>
+  Explore additional AWS networking features like private subnets, NAT gateways, and VPC endpoints to enhance your architecture.
+</Tip>
