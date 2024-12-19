@@ -1,0 +1,118 @@
+---
+title: Introduction
+description: 'Welcome to the ultimate documentation for all my projects!'
+---
+
+<img
+  className="block dark:hidden mx-auto mt-8"
+  src="/images/projects-overview-light.svg"
+  alt="Projects Overview Light"
+/>
+<img
+  className="hidden dark:block mx-auto mt-8"
+  src="/images/projects-overview-dark.svg"
+  alt="Projects Overview Dark"
+/>
+
+## Welcome to My Project Universe 🚀
+
+Welcome to a creative exploration of my professional and personal projects! This documentation serves as the epicenter of innovation, detailing every creative endeavor I have embarked on. From futuristic web applications to groundbreaking cloud solutions, each project represents a journey into the world of technology and design. Dive in to discover not just the **how**, but the **why** behind my creations. 
+
+<Illustration>
+  <Flowchart src="/images/project-flowchart.svg" alt="Project Workflow" />
+</Illustration>
+
+## What to Expect
+
+### 🔍 **A World of Ideas**
+Each project is a story of its own, intertwined with creativity, technical prowess, and problem-solving. You can explore my work across domains like:
+
+- **Web Development:** Building dynamic and futuristic applications using React, TypeScript, and Tailwind CSS.
+- **Cloud Solutions:** Deploying scalable and efficient systems on AWS.
+- **Database Design:** Creating seamless, optimized solutions for data storage and retrieval.
+- **Mobile Development:** Designing interactive apps with Flutter and beyond.
+
+### ✨ **Interactive Learning**
+This documentation isn’t just a guide—it’s an experience! Hover over icons, cards, and elements to reveal more information and visual surprises.
+
+<CardGroup cols={2}>
+  <Card
+    title="Explore Projects"
+    icon="folder-open"
+    href="/projects"
+  >
+    Access a curated list of all my projects with detailed explanations and insights.
+  </Card>
+  <Card
+    title="Learn My Process"
+    icon="cogs"
+    href="/process"
+  >
+    Discover my end-to-end workflow, from ideation to deployment.
+  </Card>
+</CardGroup>
+
+## The Tools That Shaped the Vision
+
+### 🛠 **Technologies and Frameworks**
+Each project leverages cutting-edge tools to ensure scalability, performance, and user engagement. Some of the key technologies I’ve mastered include:
+
+- **Frontend:** React.js, Vite, Tailwind CSS, Framer Motion, Lucide React
+- **Backend:** Supabase, Firebase, Node.js
+- **Cloud:** AWS, Google Drive API, Google Sheets Integration
+- **Design:** Figma, shadcn-ui, Radix UI
+
+### 🌐 **Collaboration & Deployment**
+Collaboration and seamless deployment are integral to my work. With tools like Git, Vercel, and Netlify, I ensure every project reaches the audience in its most polished form.
+
+## Highlights of My Projects
+
+<CardGroup cols={3}>
+  <Card
+    title="Portfolio Website"
+    icon="user"
+    href="https://briankimemia.vercel.app"
+  >
+    A futuristic, interactive portfolio showcasing my journey and achievements.
+  </Card>
+  <Card
+    title="Receipt & Invoice App"
+    icon="file-invoice"
+    href="https://msolution-engineering-records.vercel.app/"
+  >
+    A modern solution for managing receipts and invoices with cloud integration.
+  </Card>
+  <Card
+    title="School Management System"
+    icon="chalkboard-teacher"
+    href="/projects/school-management"
+  >
+    Empowering schools to manage students, teachers, and reports efficiently.
+  </Card>
+</CardGroup>
+
+## Let’s Dive Deeper
+
+### 🌟 **Vision and Inspiration**
+I’m driven by the belief that technology is a tool for empowerment. Each of my projects is designed not just to solve a problem but to inspire creativity and efficiency. Whether it’s a portfolio website with a 3D lift effect or an interactive dashboard for energy solutions, innovation is at the core of my work.
+
+<CardGroup cols={2}>
+  <Card
+    title="Contact Me"
+    icon="envelope"
+    href="/contact"
+  >
+    Have questions or ideas? Reach out and let’s collaborate!
+  </Card>
+  <Card
+    title="View Blog"
+    icon="blog"
+    href="/blog"
+  >
+    Explore thoughts and insights on technology and design.
+  </Card>
+</CardGroup>
+
+---
+
+Ready to explore? Let’s build something amazing together! 🎨
