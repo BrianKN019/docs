@@ -57,7 +57,8 @@
         "development",
         "nas",
         "vpclogs",
-        "s3"
+        "s3",
+        "vpcpeering"
 
       ]
     },
