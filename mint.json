@@ -59,8 +59,8 @@
         "vpclogs",
         "s3",
         "vpcpeering",
-        "vpcconnect"
-        
+        "vpcconnect",
+        "rds"
 
       ]
     },
