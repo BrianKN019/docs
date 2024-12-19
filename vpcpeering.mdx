@@ -1,0 +1,155 @@
+import Image from 'next/image'
+
+# 🛠️ Legendary AWS VPC Peering Project
+
+Welcome to the **Legendary AWS Networks VPC Peering Project**! This detailed guide will walk you through the process of creating secure, private communication between two isolated Virtual Private Clouds (VPCs) in AWS. We'll use Terraform to automate the entire process while ensuring scalability, efficiency, and best practices.
+
+![AWS VPC Peering Banner](path/to/aws-banner.png)
+
+---
+
+## 🚀 Project Overview
+
+In this project, we will:
+
+1. **Provision two VPCs** with unique CIDR blocks.
+2. **Establish a VPC Peering connection** between the two VPCs.
+3. **Update route tables** to allow traffic flow between the VPCs.
+4. **Launch EC2 instances** in both VPCs for connectivity testing.
+5. **Test private communication** between instances in separate VPCs.
+6. **Optionally clean up resources** after testing.
+
+---
+
+## 🛣️ Process Flow
+
+Here's a visual flowchart of the VPC Peering setup process:
+
+```mermaid
+graph TD
+    Start[🏁 Project Start: AWS VPC Peering Setup]:::start
+    Start --> Step1[☁️ Step 1: Provision VPCs]:::step
+    Step1 --> VPC1[📦 VPC 1 - CIDR: 10.1.0.0/16]:::vpc
+    Step1 --> VPC2[📦 VPC 2 - CIDR: 10.2.0.0/16]:::vpc
+
+    VPC1 --> Subnet1[🔄 Public Subnet in VPC 1]:::subnet
+    VPC2 --> Subnet2[🔄 Public Subnet in VPC 2]:::subnet
+
+    Subnet1 --> Step2[🔗 Step 2: Establish VPC Peering Connection]:::step
+    Step2 --> Requester[🤝 Initiate Peering Request - VPC 1 (Requester)]:::peer
+    Step2 --> Accepter[🤝 Accept Peering Request - VPC 2 (Accepter)]:::peer
+
+    Step2 --> Step3[🛣️ Step 3: Configure Route Tables]:::step
+    Step3 --> RouteVPC1[📍 Add Route in VPC 1 to VPC 2 CIDR]:::route
+    Step3 --> RouteVPC2[📍 Add Route in VPC 2 to VPC 1 CIDR]:::route
+
+    Step3 --> Step4[💻 Step 4: Launch Test EC2 Instances]:::step
+    Step4 --> EC2Instance1[🚀 EC2 Instance in VPC 1]:::ec2
+    Step4 --> EC2Instance2[🚀 EC2 Instance in VPC 2]:::ec2
+
+    Step4 --> Step5[🔍 Step 5: Test Connectivity]:::test
+    Step5 --> TestPing[📡 Ping Test Between Instances]:::test
+
+    TestPing --> Success[✅ Connectivity Verified]:::success
+    Success --> Complete[🎉 Project Complete: Secure Private Connection]:::complete
+
+    Complete --> Cleanup[🧹 Optional: Clean Up Resources]:::cleanup
+
+    classDef start fill:#FF9900,stroke:#333,stroke-width:2px,color:#fff;
+    classDef step fill:#F4F4F4,stroke:#333,stroke-width:1px;
+    classDef vpc fill:#00BFFF,stroke:#333,stroke-width:1px,color:#fff;
+    classDef subnet fill:#34D399,stroke:#333,stroke-width:1px,color:#fff;
+    classDef peer fill:#FBBF24,stroke:#333,stroke-width:1px,color:#fff;
+    classDef route fill:#A855F7,stroke:#333,stroke-width:1px,color:#fff;
+    classDef ec2 fill:#10B981,stroke:#333,stroke-width:1px,color:#fff;
+    classDef test fill:#6366F1,stroke:#333,stroke-width:1px,color:#fff;
+    classDef success fill:#22C55E,stroke:#333,stroke-width:2px,color:#fff;
+    classDef complete fill:#FF6363,stroke:#333,stroke-width:2px,color:#fff;
+    classDef cleanup fill:#D1D5DB,stroke:#333,stroke-width:1px;
+```
+
+---
+
+## 🛠️ Step-by-Step Guide
+
+### ☁️ Step 1: Provision VPCs
+
+1. **Create two VPCs** with the following CIDR blocks:
+   - **VPC 1**: `10.1.0.0/16`
+   - **VPC 2**: `10.2.0.0/16`
+2. Enable DNS resolution and hostnames for both VPCs.
+3. Configure **public subnets** in each VPC to allow external access.
+
+![VPC Setup](path/to/vpc-setup-image.png)
+
+---
+
+### 🔗 Step 2: Establish VPC Peering Connection
+
+1. **Initiate the VPC Peering request** from VPC 1 (Requester).
+2. **Accept the request** in VPC 2 (Accepter).
+3. Verify that the peering connection status is `active`.
+
+---
+
+### 🛣️ Step 3: Configure Route Tables
+
+1. Update the **route table in VPC 1**:
+   - Add a route to direct traffic to VPC 2’s CIDR (`10.2.0.0/16`) via the peering connection.
+2. Update the **route table in VPC 2**:
+   - Add a route to direct traffic to VPC 1’s CIDR (`10.1.0.0/16`) via the peering connection.
+
+![Route Table Setup](path/to/route-table-image.png)
+
+---
+
+### 💻 Step 4: Launch Test EC2 Instances
+
+1. Launch an **EC2 instance** in each VPC:
+   - **VPC 1 Instance**: Amazon Linux 2, Public Subnet
+   - **VPC 2 Instance**: Amazon Linux 2, Public Subnet
+2. Assign **security groups** to allow ICMP (ping) traffic between instances.
+
+![EC2 Instances](path/to/ec2-instances-image.png)
+
+---
+
+### 🔍 Step 5: Test Connectivity
+
+1. Use **EC2 Instance Connect** to SSH into the EC2 instance in VPC 1.
+2. Run a `ping` test to the private IP address of the EC2 instance in VPC 2.
+3. Ensure successful connectivity:
+   - **Output**: Packets transmitted successfully.
+
+---
+
+### 🧹 Cleanup (Optional)
+
+If you’re done testing:
+
+1. **Delete the VPC peering connection**.
+2. Terminate the EC2 instances.
+3. Remove route table entries.
+4. Delete the VPCs to avoid incurring charges.
+
+---
+
+## 🌟 Highlights
+
+- **Automation**: Use Terraform to automate the entire setup.
+- **Scalability**: Expandable to multi-VPC architectures.
+- **Security**: Maintains secure private communication between isolated networks.
+
+![AWS Architecture Diagram](path/to/aws-architecture-image.png)
+
+---
+
+## 🔗 Additional Resources
+
+- [AWS VPC Peering Documentation](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
+- [Terraform VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
+- [Troubleshooting Peering Issues](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-troubleshoot.html)
+
+---
+
+🎉 **Congratulations!** You’ve successfully set up a secure AWS VPC Peering connection and learned how to test and manage communication between VPCs.
