@@ -1,86 +1,114 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: 'Jumpstart your journey into exploring and building with my projects in under 5 minutes!'
 ---
 
-## Setup your development
+<img
+  className="block dark:hidden mx-auto mt-8"
+  src="/images/quickstart-light.svg"
+  alt="Quickstart Light"
+/>
+<img
+  className="hidden dark:block mx-auto mt-8"
+  src="/images/quickstart-dark.svg"
+  alt="Quickstart Dark"
+/>
 
-Learn how to update your docs locally and deploy them to the public.
+## Welcome to the Quickstart 🚀
 
-### Edit and preview
+This guide will help you set up, explore, and interact with my documentation portal. Whether you're diving into **web development**, **AWS cloud solutions**, or **data analytics**, this quickstart will have you up and running in no time.
+
+## Setting Up Your Environment
+
+Learn how to set up, preview, and collaborate effectively while working with my projects.
+
+### ⚡ Edit and Preview
 
 <AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
+  <Accordion icon="github" title="Clone Project Repositories">
+    All project repositories are hosted on GitHub for easy access. You can clone these repositories locally by following these
+    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+    <br/>
+    Once cloned, you'll have access to the codebase, documentation, and tools to explore the inner workings of each project.
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
+  <Accordion icon="rectangle-terminal" title="Preview Changes">
+    To preview changes or experiment locally:
+    1. Make sure to install the required dependencies using the package manager of your choice (e.g., `npm` or `yarn`).
+    2. Run the following command in the terminal at the root of the project directory:
+    ```bash
+    npm run dev
+    ```
+    3. This will start a local server where you can view live updates to your changes.
   </Accordion>
 </AccordionGroup>
 
-### Deploy your changes
+### 🌐 Deploy Your Work
 
 <AccordionGroup>
-
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
-
+  <Accordion icon="rocket" title="Push Changes to GitHub">
+    After making your updates, commit and push the changes back to the repository. This ensures that all collaborators and systems are updated with your latest contributions. Learn more about pushing commits
+    [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository).
+  </Accordion>
+  <Accordion icon="cloud" title="Deploy to the Cloud">
+    My projects are hosted on modern platforms like Vercel and AWS. Once your changes are pushed, automated workflows handle deployments. If needed, you can trigger manual deployments via platforms like
+    [Vercel](https://vercel.com) or directly from the project's dashboard.
+  </Accordion>
 </AccordionGroup>
 
-## Update your docs
+## Interactive Features and Tools
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+Bring your edits to life with cutting-edge tools and integrations. Here’s how you can supercharge the experience:
 
 <CardGroup>
-
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
-
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
-
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
-
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
-
+  <Card title="Style the UI" icon="paintbrush" href="/settings/design">
+    Personalize the look and feel of the interfaces by tweaking styles and layouts.
+  </Card>
+  <Card title="API Integration" icon="square-code" href="/api-playground/configuration">
+    Use APIs to connect and automate workflows across cloud systems, databases, and applications.
+  </Card>
+  <Card title="Analytics & Insights" icon="chart-mixed" href="/analytics/overview">
+    Integrate analytics tools to gain valuable insights into user behavior and project performance.
+  </Card>
+  <Card title="Collaborate in Real-Time" icon="users" href="/collaboration/setup">
+    Set up collaborative environments with tools like GitHub Actions and live previews.
+  </Card>
 </CardGroup>
+
+## Exploring the Projects
+
+Each project is designed to showcase creativity, scalability, and real-world problem-solving. Here's a breakdown of what you can explore:
+
+<AccordionGroup>
+  <Accordion icon="user" title="Personal Portfolio">
+    Built with React.js and Tailwind CSS, this project features a futuristic, highly interactive design with 3D lift effects. Perfect for showcasing professional achievements.
+  </Accordion>
+  <Accordion icon="file-invoice" title="Receipt & Invoice Manager">
+    A modern app for managing receipts and invoices, integrated with Google Sheets and Google Drive for seamless cloud storage and sharing.
+  </Accordion>
+  <Accordion icon="chalkboard-teacher" title="School Management System">
+    An all-in-one solution for managing students, teachers, and reports with easy-to-use interfaces and data export capabilities.
+  </Accordion>
+  <Accordion icon="database" title="Hospital Database System">
+    Designed for healthcare providers, this project ensures efficient data storage and retrieval with MySQL backend and API integration.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+Ready to dive deeper? Here’s what you can do next:
+
+<CardGroup>
+  <Card title="Read More" icon="book" href="/projects/overview">
+    Discover detailed case studies and project insights.
+  </Card>
+  <Card title="Contribute" icon="code-branch" href="/collaboration/how-to-contribute">
+    Join as a contributor and be part of building something incredible.
+  </Card>
+  <Card title="Contact Me" icon="envelope" href="/contact">
+    Have questions or ideas? Let’s collaborate and bring them to life.
+  </Card>
+</CardGroup>
+
+---
+
+Let’s make something extraordinary, one project at a time! 🚀

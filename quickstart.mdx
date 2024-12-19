@@ -26,19 +26,47 @@ Learn how to set up, preview, and collaborate effectively while working with my 
 
 <AccordionGroup>
   <Accordion icon="github" title="Clone Project Repositories">
-    All project repositories are hosted on GitHub for easy access. You can clone these repositories locally by following these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
-    <br/>
-    Once cloned, you'll have access to the codebase, documentation, and tools to explore the inner workings of each project.
+    All project repositories are hosted on GitHub for easy access. Use the commands below to clone and start exploring:
+
+    <CodeSnippet title="Clone and Explore AWS Cloud Projects">
+    ```bash
+    # Clone the AWS cloud projects repository
+    git clone https://github.com/BrianKN019/aws-cloud-solutions.git
+    cd aws-cloud-solutions
+
+    # Explore deployment templates
+    cat templates/deployment.yaml
+
+    # Deploy infrastructure
+    aws cloudformation deploy --template-file templates/deployment.yaml --stack-name my-aws-stack
+    ```
+    </CodeSnippet>
+
+    <CodeSnippet title="Clone the Solar Sizing Calculator">
+    ```bash
+    # Clone the solar sizing calculator repository
+    git clone https://github.com/BrianKN019/solar-sizing-calculator.git
+    cd solar-sizing-calculator
+
+    # Install dependencies
+    npm install
+
+    # Run locally
+    npm run dev
+    ```
+    </CodeSnippet>
+
+    Live preview available at [Solar Sizing Calculator](https://solarsizing-cal.vercel.app/).
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview Changes">
+
+  <Accordion icon="rectangle-terminal" title="Preview Changes Locally">
     To preview changes or experiment locally:
-    1. Make sure to install the required dependencies using the package manager of your choice (e.g., `npm` or `yarn`).
-    2. Run the following command in the terminal at the root of the project directory:
+    1. Ensure you have the necessary dependencies installed.
+    2. Run the following command in the project directory:
     ```bash
     npm run dev
     ```
-    3. This will start a local server where you can view live updates to your changes.
+    3. Access the live preview at `http://localhost:3000`.
   </Accordion>
 </AccordionGroup>
 
@@ -46,18 +74,30 @@ Learn how to set up, preview, and collaborate effectively while working with my 
 
 <AccordionGroup>
   <Accordion icon="rocket" title="Push Changes to GitHub">
-    After making your updates, commit and push the changes back to the repository. This ensures that all collaborators and systems are updated with your latest contributions. Learn more about pushing commits
-    [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository).
+    After making updates, commit and push the changes back to the repository. Use this quick command:
+    ```bash
+    git add .
+    git commit -m "Your update message"
+    git push origin main
+    ```
+    Learn more about pushing commits [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository).
   </Accordion>
   <Accordion icon="cloud" title="Deploy to the Cloud">
-    My projects are hosted on modern platforms like Vercel and AWS. Once your changes are pushed, automated workflows handle deployments. If needed, you can trigger manual deployments via platforms like
-    [Vercel](https://vercel.com) or directly from the project's dashboard.
+    My projects leverage modern platforms like Vercel and AWS. Deployments are often automated, but you can trigger them manually if needed:
+
+    ```bash
+    # Trigger a Vercel deployment manually
+    vercel deploy
+    ```
+    View the deployed projects at:
+    - [Business Website](https://msolution-ke.vercel.app/)
+    - [Solar Sizing Calculator](https://solarsizing-cal.vercel.app/)
   </Accordion>
 </AccordionGroup>
 
 ## Interactive Features and Tools
 
-Bring your edits to life with cutting-edge tools and integrations. Here’s how you can supercharge the experience:
+Supercharge your experience with these interactive tools and features:
 
 <CardGroup>
   <Card title="Style the UI" icon="paintbrush" href="/settings/design">
