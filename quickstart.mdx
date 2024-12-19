@@ -1,7 +1,9 @@
 ---
-title: 'Quickstart'
-description: 'Jumpstart your journey into exploring and building with my projects in under 5 minutes!'
+title: 'Quickstart Guide'
+description: 'Embark on an interactive journey into my projects and unleash your potential in less than 5 minutes!'
 ---
+
+import { Tabs, Tab, Accordion, CodeSnippet, Card, CardGroup, Button } from 'components/ui';
 
 <img
   className="block dark:hidden mx-auto mt-8"
@@ -14,141 +16,120 @@ description: 'Jumpstart your journey into exploring and building with my project
   alt="Quickstart Dark"
 />
 
-## Welcome to the Quickstart 🚀
+# Welcome to the Future 🚀
 
-This guide will help you set up, explore, and interact with my documentation portal. Whether you're diving into **web development**, **AWS cloud solutions**, or **data analytics**, this quickstart will have you up and running in no time.
+This **Quickstart Guide** is your gateway to an innovative and immersive experience. Dive into **web development**, **cloud engineering**, or **data analytics** with futuristic tools and projects designed to empower you. Let’s build something extraordinary together!
 
-## Setting Up Your Environment
+---
 
-Learn how to set up, preview, and collaborate effectively while working with my projects.
+## ⚙️ Setting Up Your Playground
 
-### ⚡ Edit and Preview
+Follow these steps to create your own cutting-edge environment:
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone Project Repositories">
-    All project repositories are hosted on GitHub for easy access. Use the commands below to clone and start exploring:
+<Tabs>
+  <Tab label="Clone Repositories">
+    <Accordion title="Clone Cloud Projects">
+      <CodeSnippet title="AWS Cloud Solutions">
+      ```bash
+      git clone https://github.com/BrianKN019/aws-cloud-solutions.git
+      cd aws-cloud-solutions
 
-    <CodeSnippet title="Clone and Explore AWS Cloud Projects">
-    ```bash
-    # Clone the AWS cloud projects repository
-    git clone https://github.com/BrianKN019/aws-cloud-solutions.git
-    cd aws-cloud-solutions
+      # Deploy AWS infrastructure
+      aws cloudformation deploy --template-file templates/deployment.yaml --stack-name my-aws-stack
+      ```
+      </CodeSnippet>
+    </Accordion>
 
-    # Explore deployment templates
-    cat templates/deployment.yaml
+    <Accordion title="Solar Sizing Calculator">
+      <CodeSnippet title="Run Locally">
+      ```bash
+      git clone https://github.com/BrianKN019/solar-sizing-calculator.git
+      cd solar-sizing-calculator
 
-    # Deploy infrastructure
-    aws cloudformation deploy --template-file templates/deployment.yaml --stack-name my-aws-stack
-    ```
-    </CodeSnippet>
+      # Install and start development server
+      npm install
+      npm run dev
+      ```
+      </CodeSnippet>
+      Access it live at [Solar Sizing Calculator](https://solarsizing-cal.vercel.app/).
+    </Accordion>
+  </Tab>
 
-    <CodeSnippet title="Clone the Solar Sizing Calculator">
-    ```bash
-    # Clone the solar sizing calculator repository
-    git clone https://github.com/BrianKN019/solar-sizing-calculator.git
-    cd solar-sizing-calculator
-
-    # Install dependencies
-    npm install
-
-    # Run locally
-    npm run dev
-    ```
-    </CodeSnippet>
-
-    Live preview available at [Solar Sizing Calculator](https://solarsizing-cal.vercel.app/).
-  </Accordion>
-
-  <Accordion icon="rectangle-terminal" title="Preview Changes Locally">
-    To preview changes or experiment locally:
-    1. Ensure you have the necessary dependencies installed.
-    2. Run the following command in the project directory:
+  <Tab label="Preview Projects Locally">
+    <CodeSnippet title="Preview Locally">
     ```bash
     npm run dev
+    # Open http://localhost:3000 to explore
     ```
-    3. Access the live preview at `http://localhost:3000`.
-  </Accordion>
-</AccordionGroup>
+    </CodeSnippet>
+  </Tab>
 
-### 🌐 Deploy Your Work
+  <Tab label="Deploy to Cloud">
+    <Accordion title="Deploy with Vercel">
+      <CodeSnippet title="Manual Deployment">
+      ```bash
+      vercel deploy
+      ```
+      </CodeSnippet>
+    </Accordion>
 
-<AccordionGroup>
-  <Accordion icon="rocket" title="Push Changes to GitHub">
-    After making updates, commit and push the changes back to the repository. Use this quick command:
-    ```bash
-    git add .
-    git commit -m "Your update message"
-    git push origin main
-    ```
-    Learn more about pushing commits [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository).
-  </Accordion>
-  <Accordion icon="cloud" title="Deploy to the Cloud">
-    My projects leverage modern platforms like Vercel and AWS. Deployments are often automated, but you can trigger them manually if needed:
+    <Accordion title="Continuous Deployment">
+      Automate your workflow with GitHub Actions or other CI/CD tools.
+    </Accordion>
+  </Tab>
+</Tabs>
 
-    ```bash
-    # Trigger a Vercel deployment manually
-    vercel deploy
-    ```
-    View the deployed projects at:
-    - [Business Website](https://msolution-ke.vercel.app/)
-    - [Solar Sizing Calculator](https://solarsizing-cal.vercel.app/)
-  </Accordion>
-</AccordionGroup>
+---
 
-## Interactive Features and Tools
+## 🎮 Interactive Features
 
-Supercharge your experience with these interactive tools and features:
+Explore and unleash creativity with futuristic tools:
 
 <CardGroup>
-  <Card title="Style the UI" icon="paintbrush" href="/settings/design">
-    Personalize the look and feel of the interfaces by tweaking styles and layouts.
+  <Card title="Customize UI" icon="paintbrush" href="/settings/design">
+    Adjust the design with real-time previews.
   </Card>
-  <Card title="API Integration" icon="square-code" href="/api-playground/configuration">
-    Use APIs to connect and automate workflows across cloud systems, databases, and applications.
+  <Card title="API Playground" icon="rocket" href="/api-playground/configuration">
+    Connect and automate workflows using APIs.
   </Card>
-  <Card title="Analytics & Insights" icon="chart-mixed" href="/analytics/overview">
-    Integrate analytics tools to gain valuable insights into user behavior and project performance.
+  <Card title="Advanced Analytics" icon="chart-line" href="/analytics/overview">
+    Visualize data and gain insights to optimize performance.
   </Card>
-  <Card title="Collaborate in Real-Time" icon="users" href="/collaboration/setup">
-    Set up collaborative environments with tools like GitHub Actions and live previews.
-  </Card>
-</CardGroup>
-
-## Exploring the Projects
-
-Each project is designed to showcase creativity, scalability, and real-world problem-solving. Here's a breakdown of what you can explore:
-
-<AccordionGroup>
-  <Accordion icon="user" title="Personal Portfolio">
-    Built with React.js and Tailwind CSS, this project features a futuristic, highly interactive design with 3D lift effects. Perfect for showcasing professional achievements.
-  </Accordion>
-  <Accordion icon="file-invoice" title="Receipt & Invoice Manager">
-    A modern app for managing receipts and invoices, integrated with Google Sheets and Google Drive for seamless cloud storage and sharing.
-  </Accordion>
-  <Accordion icon="chalkboard-teacher" title="School Management System">
-    An all-in-one solution for managing students, teachers, and reports with easy-to-use interfaces and data export capabilities.
-  </Accordion>
-  <Accordion icon="database" title="Hospital Database System">
-    Designed for healthcare providers, this project ensures efficient data storage and retrieval with MySQL backend and API integration.
-  </Accordion>
-</AccordionGroup>
-
-## Next Steps
-
-Ready to dive deeper? Here’s what you can do next:
-
-<CardGroup>
-  <Card title="Read More" icon="book" href="/projects/overview">
-    Discover detailed case studies and project insights.
-  </Card>
-  <Card title="Contribute" icon="code-branch" href="/collaboration/how-to-contribute">
-    Join as a contributor and be part of building something incredible.
-  </Card>
-  <Card title="Contact Me" icon="envelope" href="/contact">
-    Have questions or ideas? Let’s collaborate and bring them to life.
+  <Card title="Live Collaboration" icon="users" href="/collaboration/setup">
+    Share live sessions with your team.
   </Card>
 </CardGroup>
 
 ---
 
-Let’s make something extraordinary, one project at a time! 🚀
+## 🚀 Explore Featured Projects
+
+These innovative projects are designed to showcase real-world applications with a futuristic twist:
+
+<Accordion title="Interactive Portfolio">
+Built using **React.js** and **3D animations**, this project offers a unique way to display your professional achievements.
+</Accordion>
+
+<Accordion title="Receipts & Invoices Manager">
+A modern app for managing receipts and invoices, integrated with **Google Drive** and **Google Sheets** for seamless synchronization.
+</Accordion>
+
+<Accordion title="Smart School Manager">
+Empowers educators with tools for managing student data, grades, and reports—all in one place.
+</Accordion>
+
+<Accordion title="Hospital Data Hub">
+Enhance healthcare data management with **MySQL** backend and secure APIs.
+</Accordion>
+
+---
+
+## 📍 Next Steps
+
+<Button variant="primary" href="/projects/overview">Explore More Projects</Button>
+<Button variant="secondary" href="/contact">Let’s Collaborate</Button>
+<Button variant="outline" href="/collaboration/how-to-contribute">Contribute to My Projects</Button>
+
+---
+
+**Let’s shape the future, one line of code at a time.**
