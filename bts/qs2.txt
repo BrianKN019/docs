@@ -1,0 +1,107 @@
+---
+title: 'Quickstart'
+description: 'Get started with your documentation portal in minutes!'
+---
+
+## Setting Up Your Documentation 🚀
+
+Ready to create the ultimate documentation portal? Follow these steps to set up, preview, and deploy your documentation efficiently.
+
+### Edit and Preview 🛠️
+
+<AccordionGroup>
+  <Accordion icon="code-branch" title="Clone Your Documentation Repository">
+    Your documentation lives in a dedicated GitHub repository. Clone it locally to start editing! Follow the 
+    [GitHub cloning guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+    or access the repository directly from your [dashboard](https://dashboard.mintlify.com).
+
+    ```bash
+    git clone https://github.com/your-repo/documentation.git
+    cd documentation
+    ```
+  </Accordion>
+
+  <Accordion icon="laptop-code" title="Run Your Documentation Locally">
+    Preview changes in real-time before deploying. Install the Mintlify CLI to run your documentation locally.
+
+    1. Install Mintlify CLI:
+    ```bash
+    npm i -g mintlify
+    ```
+
+    2. Navigate to your project directory and run:
+    ```bash
+    mintlify dev
+    ```
+
+    3. Access your local preview at `http://localhost:3000`.
+  </Accordion>
+</AccordionGroup>
+
+### Deploy Your Changes 🌐
+
+<AccordionGroup>
+  <Accordion icon="rocket" title="Install the Deployment Bot">
+    Simplify your deployment process by installing the GitHub deployment bot. This bot ensures your changes are automatically pushed live.
+
+    1. Install the bot via your [Mintlify dashboard](https://dashboard.mintlify.com).
+    2. Verify the bot is active by checking for a green checkmark next to your commits.
+  </Accordion>
+
+  <Accordion icon="cloud-upload" title="Push Your Changes">
+    Commit and push your changes to GitHub to deploy them to your live site.
+
+    ```bash
+    git add .
+    git commit -m "Update documentation"
+    git push origin main
+    ```
+
+    If the deployment bot is inactive, trigger the update manually through the dashboard.
+  </Accordion>
+</AccordionGroup>
+
+## Enhancing Your Documentation ✨
+
+Take your documentation to the next level by adding more interactive and branded elements.
+
+<CardGroup>
+  <Card title="Customize the Design" icon="palette" href="/settings/global">
+    Personalize your documentation with your brand colors and styles.
+  </Card>
+
+  <Card
+    title="Add API Interactivity"
+    icon="code"
+    href="/api-playground/configuration"
+  >
+    Enable interactive API testing directly within your docs.
+  </Card>
+
+  <Card
+    title="Track User Analytics"
+    icon="chart-line"
+    href="/analytics/supported-integrations"
+  >
+    Monitor user engagement with analytics integrations.
+  </Card>
+
+  <Card
+    title="Host on Your Domain"
+    icon="globe"
+    href="/settings/custom-domain/subdomain"
+  >
+    Seamlessly integrate your docs with your website.
+  </Card>
+</CardGroup>
+
+## Advanced Tools & Features 🚀
+
+Take advantage of the advanced tools in your documentation workflow:
+
+- **Interactive Tutorials:** Guide users step-by-step through your features.
+- **Dark Mode Compatibility:** Enhance user experience with a toggleable dark theme.
+- **Dynamic Content Blocks:** Create reusable and dynamic components for consistent formatting.
+
+### Ready to Build?
+Your documentation journey starts here. Begin by setting up your development environment, adding unique elements, and showcasing your projects in style!
