@@ -58,7 +58,9 @@
         "nas",
         "vpclogs",
         "s3",
-        "vpcpeering"
+        "vpcpeering",
+        "vpcconnect"
+        
 
       ]
     },
